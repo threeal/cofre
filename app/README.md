@@ -1,10 +1,6 @@
-# Cofre
+# Cofre App
 
-A money manager, budget, and expenses app.
-
-## Components
-
-- [App](./app/README.md), a web application for Cofre.
+A web application for [Cofre](https://github.com/threeal/cofre).
 
 ## License
 
