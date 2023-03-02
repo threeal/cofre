@@ -1,0 +1,32 @@
+name: build
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.3.0
+
+      - name: Cache dependencies
+        id: cache-npm
+        uses: actions/cache@v3.2.6
+        with:
+          path: app/node_modules
+          key: app-npm-${{ hashFiles('app/package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+        working-directory: app
+        run: npm install
+
+      - name: Test app
+        working-directory: app
+        run: npm test
+
+      - name: Build app
+        working-directory: app
+        run: npm run build
