@@ -1,5 +1,7 @@
 # Cofre
 
+[![app status](https://img.shields.io/website?label=app&url=https%3A%2F%2Fthreeal.github.io%2Fcofre)](https://threeal.github.io/cofre)
+
 A money manager, budget, and expenses app.
 
 ## Components
