@@ -7,7 +7,7 @@ A money manager, budget, and expenses app.
 
 ## Components
 
-- [App](./app/README.md), a web application for Cofre.
+- [App](./app), a web application for Cofre.
 
 ## License
 
