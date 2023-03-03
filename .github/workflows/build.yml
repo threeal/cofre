@@ -23,6 +23,10 @@ jobs:
         working-directory: app
         run: npm install
 
+      - name: Run static analysis
+        working-directory: app
+        run: npm run lint
+
       - name: Test app
         working-directory: app
         run: npm test
