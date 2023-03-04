@@ -14,8 +14,8 @@
     "all": "run-s format lint build test",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "format": "prettier --write **/*.{ts,tsx}",
-    "format-check": "prettier --check **/*.{ts,tsx}",
+    "format": "prettier --write '**/*.{ts,tsx}'",
+    "format-check": "prettier --check '**/*.{ts,tsx}'",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll=false"
