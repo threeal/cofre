@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Box, Button, Grid, Stack } from "@mui/material";
+import { Delete as DeleteIcon } from "@mui/icons-material";
 import { Account } from "./account";
 import AccountCard from "./AccountCard";
 
@@ -17,9 +18,23 @@ function AccountGrid({ accounts }: Props) {
     );
   }
   return (
-    <Grid container spacing={2}>
-      {items}
-    </Grid>
+    <Stack spacing={2}>
+      <Box display="flex" justifyContent="flex-end">
+        <Button
+          startIcon={<DeleteIcon />}
+          size="small"
+          variant="contained"
+          color="error"
+        >
+          Delete
+        </Button>
+      </Box>
+      <Box margin={-2}>
+        <Grid item container spacing={2}>
+          {items}
+        </Grid>
+      </Box>
+    </Stack>
   );
 }
 
