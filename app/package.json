@@ -18,7 +18,7 @@
     "format-check": "prettier --check **/*.{ts,tsx}",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test --watchAll=false"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
