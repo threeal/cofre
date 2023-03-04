@@ -8,6 +8,19 @@ interface Props {
   accounts: Account[];
 }
 
+function DeleteButton() {
+  return (
+    <Button
+      startIcon={<DeleteIcon />}
+      size="small"
+      variant="contained"
+      color="error"
+    >
+      Delete
+    </Button>
+  );
+}
+
 function AccountGrid({ accounts }: Props) {
   const items = [];
   for (const [i, account] of accounts.entries()) {
@@ -20,14 +33,7 @@ function AccountGrid({ accounts }: Props) {
   return (
     <Stack spacing={2}>
       <Box display="flex" justifyContent="flex-end">
-        <Button
-          startIcon={<DeleteIcon />}
-          size="small"
-          variant="contained"
-          color="error"
-        >
-          Delete
-        </Button>
+        <DeleteButton />
       </Box>
       <Box margin={-2}>
         <Grid item container spacing={2}>
