@@ -20,7 +20,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "target": "es5",
+    "target": "es6",
     "skipLibCheck": true
   }
 }
