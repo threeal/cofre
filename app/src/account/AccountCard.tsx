@@ -1,13 +1,19 @@
 import React from "react";
 import { Card, CardContent, Stack } from "@mui/material";
+import { toLocaleCurrency } from "../utils";
 
-function AccountCard() {
+interface AccountCardProps {
+  name: string;
+  value: number;
+}
+
+function AccountCard(props: AccountCardProps) {
   return (
     <Card>
       <CardContent>
         <Stack spacing={2}>
-          <b>Bank</b>
-          <div>Rp. 19.000.000</div>
+          <b>{props.name}</b>
+          <div>{toLocaleCurrency(props.value)}</div>
         </Stack>
       </CardContent>
     </Card>

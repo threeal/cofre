@@ -7,7 +7,7 @@ function App() {
   for (let i = 0; i < 8; ++i) {
     items.push(
       <Grid item xs={6} sm={4} md={3}>
-        <AccountCard />
+        <AccountCard name="Bank" value={3500000} />
       </Grid>
     );
   }
