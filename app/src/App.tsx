@@ -1,24 +1,19 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Container } from "@mui/material";
+import { Account, AccountGrid } from "./account";
 
 function App() {
+  const accounts: Account[] = [
+    { name: "Investment", amount: 55000000 },
+    { name: "Bank", amount: 3500000 },
+    { name: "Cash", amount: 220000 },
+    { name: "Digital", amount: 50000 },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container maxWidth="md">
+        <AccountGrid accounts={accounts} />
+      </Container>
     </div>
   );
 }
