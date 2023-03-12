@@ -1,21 +1,24 @@
 import React from "react";
-import { Card, CardContent, Stack } from "@mui/material";
+import { Card, CardActionArea, CardContent, Stack } from "@mui/material";
 import { toLocaleCurrency } from "../utils";
 import { Account } from "./account";
 
 interface Props {
   account: Account;
+  onClick?: () => void;
 }
 
-function AccountCard({ account }: Props) {
+function AccountCard({ account, onClick }: Props) {
   return (
     <Card>
-      <CardContent>
-        <Stack spacing={2}>
-          <b>{account.name}</b>
-          <div>{toLocaleCurrency(account.amount)}</div>
-        </Stack>
-      </CardContent>
+      <CardActionArea onClick={onClick}>
+        <CardContent>
+          <Stack spacing={2}>
+            <b>{account.name}</b>
+            <div>{toLocaleCurrency(account.amount)}</div>
+          </Stack>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 }
