@@ -1,15 +1,15 @@
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: 'daily'
+      interval: daily
     commit-message:
       prefix: chore
 
-  - package-ecosystem: 'npm'
-    directory: '/app'
+  - package-ecosystem: npm
+    directory: /app
     schedule:
-      interval: 'daily'
+      interval: daily
     commit-message:
       prefix: chore
