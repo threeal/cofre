@@ -13,13 +13,14 @@ jobs:
 
       - name: Cache dependencies
         id: cache-npm
-        uses: actions/cache@v4.0.2
+        uses: threeal/cache-action@v0.1.0
         with:
-          path: app/node_modules
-          key: app-npm-${{ hashFiles('app/package-lock.json') }}
+          key: app-npm
+          version: ${{ hashFiles('app/package-lock.json') }}
+          files: app/node_modules
 
       - name: Install dependencies
-        if: steps.cache-npm.outputs.cache-hit != 'true'
+        if: steps.cache-npm.outputs.restored == 'false'
         working-directory: app
         run: npm install
 
