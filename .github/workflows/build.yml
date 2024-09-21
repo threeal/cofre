@@ -13,7 +13,7 @@ jobs:
 
       - name: Cache dependencies
         id: cache-npm
-        uses: threeal/cache-action@v0.2.0
+        uses: threeal/cache-action@v0.2.1
         with:
           key: app-npm
           version: ${{ hashFiles('app/package-lock.json') }}
