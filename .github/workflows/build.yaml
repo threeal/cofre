@@ -1,0 +1,33 @@
+name: Build
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  build-app:
+    name: Build App
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4.2.2
+
+      - name: Install Dependencies
+        working-directory: app
+        run: npm install
+
+      - name: Check formatting
+        working-directory: app
+        run: npm run format-check
+
+      - name: Check Lint
+        working-directory: app
+        run: npm run lint
+
+      - name: Test App
+        working-directory: app
+        run: npm test
+
+      - name: Build App
+        working-directory: app
+        run: npm run build

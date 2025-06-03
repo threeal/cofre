@@ -1,0 +1,38 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  deploy-app:
+    name: Deploy App
+    runs-on: ubuntu-24.04
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-app.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4.2.2
+
+      - name: Install Dependencies
+        working-directory: app
+        run: npm install
+
+      - name: Build App
+        working-directory: app
+        run: npm run build
+
+      - name: Upload App
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: app/build
+
+      - name: Deploy App
+        id: deploy-app
+        uses: actions/deploy-pages@v4.0.5
