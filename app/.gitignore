@@ -1,4 +1,5 @@
-build/
-node_modules/
+!.npmrc
+!.prettierignore
 
-!.eslint*
+dist/
+node_modules/
