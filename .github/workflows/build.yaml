@@ -12,22 +12,29 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v4.2.2
 
+      - name: Setup pnpm
+        uses: threeal/setup-pnpm-action@v1.0.0
+
       - name: Install Dependencies
         working-directory: app
-        run: npm install
+        run: pnpm install
 
-      - name: Check formatting
+      - name: Check Formatting
         working-directory: app
-        run: npm run format-check
+        run: pnpm prettier --check .
 
       - name: Check Lint
         working-directory: app
-        run: npm run lint
+        run: pnpm eslint
+
+      - name: Check Types
+        working-directory: app
+        run: pnpm tsc --noEmit
 
       - name: Test App
         working-directory: app
-        run: npm test
+        run: pnpm test
 
       - name: Build App
         working-directory: app
-        run: npm run build
+        run: pnpm vite build
