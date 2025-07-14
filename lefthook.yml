@@ -20,7 +20,7 @@ pre-commit:
 
     - name: check types
       root: app
-      run: pnpm tsc --noEmit
+      run: pnpm tsc
       glob:
         - "*.{ts,tsx}"
         - .npmrc
