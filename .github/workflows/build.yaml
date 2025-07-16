@@ -19,14 +19,6 @@ jobs:
         working-directory: app
         run: pnpm install
 
-      - name: Check Formatting
-        working-directory: app
-        run: pnpm prettier --check .
-
-      - name: Check Lint
-        working-directory: app
-        run: pnpm eslint
-
       - name: Check Types
         working-directory: app
         run: pnpm tsc
@@ -34,6 +26,14 @@ jobs:
       - name: Test App
         working-directory: app
         run: pnpm test
+
+      - name: Check Formatting
+        working-directory: app
+        run: pnpm prettier --check .
+
+      - name: Check Lint
+        working-directory: app
+        run: pnpm eslint
 
       - name: Build App
         working-directory: app

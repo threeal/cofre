@@ -10,14 +10,6 @@ pre-commit:
         - pnpm-lock.yaml
         - pnpm-workspace.yaml
 
-    - name: fix formatting
-      root: app
-      run: pnpm prettier --write --ignore-unknown {staged_files}
-
-    - name: fix lint
-      root: app
-      run: pnpm eslint --no-warn-ignored --fix {staged_files}
-
     - name: check types
       root: app
       run: pnpm tsc
@@ -26,6 +18,14 @@ pre-commit:
         - .npmrc
         - pnpm-lock.yaml
         - tsconfig.json
+
+    - name: fix formatting
+      root: app
+      run: pnpm prettier --write --ignore-unknown {staged_files}
+
+    - name: fix lint
+      root: app
+      run: pnpm eslint --no-warn-ignored --fix {staged_files}
 
     - name: check diff
       root: app
