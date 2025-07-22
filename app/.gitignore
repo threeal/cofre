@@ -1,5 +1,5 @@
 !.npmrc
-!.prettierignore
+!.prettier*
 
 dist/
 node_modules/
