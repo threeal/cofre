@@ -4,20 +4,10 @@ pre-commit:
     - name: install dependencies
       root: app
       run: pnpm install
-      glob:
-        - .npmrc
-        - package.json
-        - pnpm-lock.yaml
-        - pnpm-workspace.yaml
 
     - name: check types
       root: app
       run: pnpm tsc
-      glob:
-        - "*.{ts,tsx}"
-        - .npmrc
-        - pnpm-lock.yaml
-        - tsconfig.json
 
     - name: fix formatting
       root: app
