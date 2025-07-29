@@ -11,11 +11,11 @@ pre-commit:
 
     - name: fix formatting
       root: app
-      run: pnpm prettier --write --ignore-unknown {staged_files}
+      run: pnpm prettier --write .
 
     - name: fix lint
       root: app
-      run: pnpm eslint --no-warn-ignored --fix {staged_files}
+      run: pnpm eslint --fix
 
     - name: check diff
       root: app
