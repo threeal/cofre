@@ -18,5 +18,4 @@ pre-commit:
       run: pnpm eslint --fix
 
     - name: check diff
-      root: app
       run: git diff --exit-code app/pnpm-lock.yaml {staged_files}
