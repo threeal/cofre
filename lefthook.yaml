@@ -1,5 +1,7 @@
 pre-commit:
   piped: true
+  fail_on_changes: always
+  fail_on_changes_diff: true
   jobs:
     - name: install dependencies
       root: app
@@ -16,6 +18,3 @@ pre-commit:
     - name: fix lint
       root: app
       run: pnpm eslint --fix
-
-    - name: check diff
-      run: git diff --exit-code app/pnpm-lock.yaml {staged_files}
