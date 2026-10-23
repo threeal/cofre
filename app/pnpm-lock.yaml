@@ -55,14 +55,14 @@ importers:
         specifier: ^1.63.0
         version: 1.63.0
       prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
+        specifier: ^3.9.6
+        version: 3.9.6
       prettier-plugin-css-order:
         specifier: ^2.2.0
-        version: 2.2.0(postcss@8.5.15)(prettier@3.6.2)
+        version: 2.2.0(postcss@8.5.15)(prettier@3.9.6)
       prettier-plugin-organize-imports:
         specifier: ^4.3.0
-        version: 4.3.0(prettier@3.6.2)(typescript@6.0.3)
+        version: 4.3.0(prettier@3.9.6)(typescript@6.0.3)
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -1640,8 +1640,8 @@ packages:
       vue-tsc:
         optional: true
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3549,21 +3549,21 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-css-order@2.2.0(postcss@8.5.15)(prettier@3.6.2):
+  prettier-plugin-css-order@2.2.0(postcss@8.5.15)(prettier@3.9.6):
     dependencies:
       css-declaration-sorter: 7.3.1(postcss@8.5.15)
       postcss-less: 6.0.0(postcss@8.5.15)
       postcss-scss: 4.0.9(postcss@8.5.15)
-      prettier: 3.6.2
+      prettier: 3.9.6
     transitivePeerDependencies:
       - postcss
 
-  prettier-plugin-organize-imports@4.3.0(prettier@3.6.2)(typescript@6.0.3):
+  prettier-plugin-organize-imports@4.3.0(prettier@3.9.6)(typescript@6.0.3):
     dependencies:
-      prettier: 3.6.2
+      prettier: 3.9.6
       typescript: 6.0.3
 
-  prettier@3.6.2: {}
+  prettier@3.9.6: {}
 
   prop-types@15.8.1:
     dependencies:
